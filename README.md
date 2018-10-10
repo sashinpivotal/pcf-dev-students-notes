@@ -261,7 +261,6 @@ with the following items.
 ### Lab extras
 
 -   Try `cf` commands relevant to security groups   
--   Try `cf stacks` 
 -   Try PCF Metrics from the App Manager
 
 ## Staging and Running: Push the Web-UI
@@ -282,6 +281,7 @@ with the following items.
 ### Lab extras
 
 -   Try `cf buildpacks`
+-   Try `cf stacks` 
 -   What is the difference between `offline buildpack` 
     vs `online buildpack`
 -   Use the online Java buildpack from the following website
