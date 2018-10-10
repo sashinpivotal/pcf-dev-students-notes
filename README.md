@@ -336,6 +336,10 @@ with the following items.
 
 ## Microservices: Container SSH
 
+### Supplemental topics
+
+-   [Application continuum](http://www.appcontinuum.io/)
+
 ### Challenge questions (related to presentation)
 
 -   What are the complexities introduced in Microservices?
@@ -359,7 +363,6 @@ with the following items.
 ### References
 
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
--   [Application continuum](http://www.appcontinuum.io/)
 -   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
  
 ## Route Services: Deploying a route service for rate limiting
