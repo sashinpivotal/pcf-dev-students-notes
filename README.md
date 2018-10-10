@@ -1,6 +1,9 @@
-# pcf-dev-students-notes
+# PCF Developer Training 
 
--   Supplemental lab notes
+The purpose of this document to supplement the official training materials
+with the following items.
+
+-   Supplemental topics
 -   Challenge questions
 -   Lab extras
 -   Trouble-shooting tips
@@ -8,15 +11,14 @@
 
 ## Basic Definitions: Getting Started w/ the CF CLI
 
-### References
+### Supplemental topics
 
 -   IaaS
 -   CaaS -> Docker, Kubernetes, PKS
--   PaaS -> Cloud Foundry, PAS (pre-2.0 Elastic Runtime), what
-    we are teaching in this course
+-   PaaS -> Cloud Foundry, PAS (pre-2.0 Elastic Runtime)
 -   FaaS
 -   BOSH - The secret sauce of Cloud Foundry
--   App Manager, demo PWS
+-   App Manager
 -   Op Manager - value add of PCF (Operator)
 
 
