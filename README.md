@@ -192,7 +192,7 @@ with the following items.
 
 ### Lab extras
 
--   Try different syslog drainers such as 
+-   Try different syslog drainers such as Kibana or Splunk
 
 ## Manipulating Routes - Blue/Green Deployment
 
@@ -220,7 +220,7 @@ with the following items.
     
 ### Lab extras
 
--   Try cf commands relevant to security groups    
+-   Try `cf` commands relevant to security groups    
 
 ## Staging and Running: Push the Web-UI
     
