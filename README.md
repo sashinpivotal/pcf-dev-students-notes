@@ -336,10 +336,6 @@ with the following items.
 
 ## Microservices: Container SSH
 
-### Lab document error
-
--  
-
 ### Challenge questions (related to presentation)
 
 -   What are the complexities introduced in Microservices?
@@ -368,8 +364,8 @@ with the following items.
 
 -   When do you use "bind-service" and when do you use 
     "bind-route-service" command?
--   What `cf` command do you use to find all the route 
-    services bound to a route?
+-   What `cf` command do you use to find all the `route 
+    services` bound to a route?
          
 ## Docker: Pusing a Docker App
 
@@ -382,7 +378,7 @@ with the following items.
 ### Lab Extras
 
 -   Try `cf feature-flags` and note that `diego_docker` is enabled
--   Try hello docker image: tutum/hello-world
+-   Try hello docker image: `tutum/hello-world`
     
 ## Docker: Service Keys
 
@@ -404,7 +400,8 @@ with the following items.
 
 ### Trouble-shooting
 
--   Set the memory to 768M when deploying UAA application
+-   Increase the memory to 768M when deploying UAA application. 
+    Otherwise, the "cf
 
   
 
