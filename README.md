@@ -62,7 +62,13 @@ with the following items.
 
 ### Challenge questions
 
--   What are the examples of PCF log types? (Google “PCF log types”)
+-   Which component of PCF architecture is responsible for 
+    collecting logs?
+-   What are the other log types other than STG, APP, CELL, RTR?
+    (Google `PCF log types`)
+-   What is the responsibility of Doppler?
+-   What is the responsibility of a developer in order to 
+    take advantage of PCF logging system?
 
 
 ## Resiliency: Application Resiliency
@@ -80,6 +86,11 @@ with the following items.
 
 -  Which component of the PCF architecture maintains the `desired
    state` and `actual state` of the an application?
+-  What are 4 levels of resilency (or recoverability) does PCF provide?
+-  When Diego system is asked to increase number of an application
+   instances by 3, does it create all 3 instances in a single cell?
+-  What are the value proposition of PCF from the standpoint of
+   2nd-day operation? 
 
 ## Services: Creating & Bind Services
     
@@ -139,15 +150,7 @@ with the following items.
 
 ## Log Drain 
 
-### Challenge questions
 
--   Which component of PCF architecture is responsible for 
-    collecting logs?
--   What are the other log types other than STG, APP, CELL, RTR?
-    (Google `PCF log types`)
--   What is the responsibility of Doppler?
--   What is the responsibility of a developer in order to 
-    take advantage of PCF logging system?
 
 ## Manipulating Routes - Blue/Green Deployment
 
