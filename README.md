@@ -102,7 +102,7 @@ with the following items.
 -   What is a service? What is a service instance?
 -   What is the role of service broker?  What rest 
     operations does it support?
--   What is a `marketplace`? What is a plan?
+-   What is a `marketplace`? What is a `plan`?
 -   What is binding?  What is the end result of a binding?
 -   What `cf` command can you use to tell what services are bound to an application?
 -   What `cf` command can you use to tell what applications are bound a service?
@@ -147,7 +147,7 @@ with the following items.
 
 ## 12 Factor Applications: Environment Variables & App Manifest 
    
-### Lab extras   
+### Lab extras 1  
 
 -   Use `cf create-app-manifest` and use the newly creted manifest file 
     to push an application    
@@ -168,9 +168,9 @@ with the following items.
     
 ### References
 
--   [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
--   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
--   [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+-   [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software) 
+-   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+-   [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
     
 
 ## Log Drains 
