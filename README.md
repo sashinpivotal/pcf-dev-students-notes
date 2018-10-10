@@ -439,12 +439,19 @@ with the following items.
     means you should be able to do most labs without a problem
     except blue-green deployment
 -   You can also use Java option to reduce the memory requirement
-    of your Spring app as following:
+    of your Spring app as following
     
     ```
-    cf push spring-music -p spring-music.war --random-route -m 512M --no-start
-cf set-env spring-music JAVA_OPTS "-Xss228K"
-cf start spring-music
+    cf push spring-music -p ./build/libs/spring-music-1.0.jar --random-route -m 512M --no-start
+    cf set-env spring-music JAVA_OPTS -Xss228K
+    cf start spring-music
+    ```
+    
+    or set it in the manifest file
+    
+    ```
+    envs:
+      JAVA_OPTS -Xss228K
     ```
     
 
