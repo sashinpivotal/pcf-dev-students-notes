@@ -277,8 +277,11 @@ with the following items.
     
 ### How to debug when things don't work in this lab
 
--   See if the `web-ui` app has `url` (`cf env web-ui`) environment var.
+-   See if the `web-ui` app has `url` (`cf env web-ui`) environment var
+    -   The `rest-backend` upsi has to be created correctly
+    -   The `web-ui` is then bound to the `rest-backend` upsi
 -   Make sure `web-ui` app was started with correct path to the Ruby code
+    -   Oherwise, you will experience `GemFile locked..` error
 -   See if `web-ui` has been restarted
     
 ### Lab extras
