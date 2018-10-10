@@ -275,6 +275,12 @@ with the following items.
 -   When you delete an application using `cf delete <app-name>`, is
     the associated route gets deleted as well?
     
+### How to debug when things don't work in this lab
+
+-   See if the `web-ui` app has `url` (`cf env web-ui`) environment var.
+-   Make sure `web-ui` app was started with correct path to the Ruby code
+-   See if `web-ui` has been restarted
+    
 ### Lab extras
 
 -   Try `cf buildpacks`
