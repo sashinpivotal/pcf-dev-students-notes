@@ -210,7 +210,17 @@ with the following items.
 
 ### Supplemental topics
 
--   Semantic versioning
+-   Semantic versioning - Major.Minor.Patch
+-   Feature toggles
+
+### Steps for blue-green deployment
+
+1.  V1 - R1 is currently running
+1.  Create V2 with R2 and make sure it is working
+1.  Add R1 to V2 - now V2 handles both R1 and R2
+1.  Remove R1 from V1 - now V2 handles 100% of R1
+1.  Remove R2 from V2 - now V2 handles only R1
+1.  
 
 ### Challenge questions
 
