@@ -168,6 +168,8 @@
 ## UAA: Deplpying a Route service for authentication
 
 ### Challenge questions
+
+-   Which grant types are used in this lab?
     
 
        
