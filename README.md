@@ -191,6 +191,9 @@ with the following items.
     any apps?
 -   What is the logical steps of blue-green deployment?
 -   Is blue-green deployment suitable for major feature change?
+-   Can you describe which PCF components are responsible for
+    updating the routing table whenever a new instance is created
+    or old instance gets destroyed?
   
 ## App Execution & Security Groups: Setting up App Monitoring with New Relic
 
