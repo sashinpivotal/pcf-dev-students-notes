@@ -365,6 +365,7 @@ with the following items.
 
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
 -   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
+-   [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems-ebook/dp/B00T3N7XB4/ref=sr_1_1?ie=UTF8&qid=1539207745&sr=8-1&keywords=microservices+sam+newman) book
  
 ## Route Services: Deploying a route service for rate limiting
 
@@ -420,6 +421,31 @@ with the following items.
 -   Which grant types are used in this lab?
 
 ### References
+    
+## After the training
+
+### Course website
+
+-   The course website will be available to you for a long time
+-   This page will be also available for a long time
+
+### PCF access
+
+-   The 5G space given to you during the training will be 
+    deleted right after the training
+-   You can still do use PWS 2G free account to do the lab
+    on your own 
+-   Please note that Spring app needs 768M at a minimum, which
+    means you should be able to do most labs without a problem
+    except blue-green deployment
+-   You can also use Java option to reduce the memory requirement
+    of your Spring app as following:
+    
+    ```
+    cf push spring-music -p spring-music.war --random-route -m 512M --no-start
+cf set-env spring-music JAVA_OPTS "-Xss228K"
+cf start spring-music
+    ```
     
 
        
