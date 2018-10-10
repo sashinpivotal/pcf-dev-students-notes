@@ -146,6 +146,13 @@ with the following items.
 -   [Cloud Foundry Service Broker API](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
 
 ## 12 Factor Applications: Environment Variables & App Manifest 
+
+### Challenge questions
+
+-   What is the value proposition of setting environment variables
+    in the manifest file regarding providing application
+    configuration data?  Is it better than setting configuration
+    data in the `application.properties` file?
    
 ### Lab extras 1  
 
