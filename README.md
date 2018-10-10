@@ -81,6 +81,10 @@ with the following items.
    502 Bad Gateway: Registered endpoint failed to handle the request
    ```
 
+    The `kill` operation invokes a `System.exit` command during the
+    request, the request never sends a response to the go-router,
+    and the go-router throws back the 502 to the client.
+    
 ### Challenge questions
 
 -  Which component of the PCF architecture maintains the `desired
