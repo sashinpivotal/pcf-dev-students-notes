@@ -190,7 +190,9 @@ with the following items.
 
 ## Log Drains 
 
+### Lab extras
 
+-   Try different syslog drainers such as 
 
 ## Manipulating Routes - Blue/Green Deployment
 
