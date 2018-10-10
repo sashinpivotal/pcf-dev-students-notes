@@ -153,6 +153,11 @@ with the following items.
     in the manifest file in regard to providing application
     configuration data?  Is it better than setting configuration
     data in the `application.properties` file?
+-   When you have many environment variables to set or complex 
+    configuration to do, what would be a better option than
+    using environment variables?  (Answer: Think of the usage of
+    another backing service called config server - under PWS, it
+    is called `p-config-server`.)
    
 ### Lab extras 1  
 
