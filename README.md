@@ -21,30 +21,42 @@ with the following items.
 -   App Manager
 -   Op Manager - value add of PCF (Operator)
 
+### Trouble-shooting
+
+-   If you are using GitBash under Windows, try the following in order to
+    establish a connection to the PCF
+    
+    `cf auth <username> <password>`
+
+## Lab extras
+
+-   Try [PCF AppManager](https://login.run.pivotal.io)
 
 ## Tech Overview: Pushing Apps
 
-### Supplemental lab notes
-
--   Consider adding a unique non-random route for easier postman automation.
--   There may be slight differences in the push output varying by the cli version:
-    - url -> routes
-    - memory usage -> usage
-
 ### Challenge questions
 
+-   What is the PCF component that handles the requests coming 
+    from "cf cli"?
+-   What is the PCF component that handles routing?
+    
 -   How many containers are needed for pushing an app?
 -   Why do you see “container gets created and destroyed” as part of pushing app?
 -   What is the “org”/“space” structure in your PCF installation?
 -   Why do you have to use “--random-route”? 
 -   What is the “cf push” option that lets you specify the hostname 
     part of a route? (“cf push -h”)
+    
+### References
+
+-   [PCF Architectural diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/cloudfoundry-incubator/diego-design-notes/master/clickable-diego-overview/clickable-diego-overview.html)
 
 ## Core Themes: Scaling Apps
 
 ### Lab Extras
 
 -   Try PCF autoscaling feature in PWS App Manager
+
 
 ## Logging Metrics: Application Logs and & Events
 
@@ -64,13 +76,38 @@ with the following items.
    502 Bad Gateway: Registered endpoint failed to handle the request
    ```
 
+### Challenge questions
+
+-  Which component of the PCF architecture maintains the `desired
+   state` and `actual state` of the an application?
+
 ## Services: Creating & Bind Services
     
+### Chllenge questions
+
+-   What is a service? What is a service instance?
+-   What is the role of service broker?  What rest 
+    operations does it support?
+-   What is a market place? What is a plan?
+-   What is binding?  What is the end result of a binding?
+-   How can you tell what services are bound to an application?
+-   How can you tell what applications are bound a service?
+-   Once you bind an application to a service instance, do
+    you do "restart" or "restaging"?
+-   What is the difference between "brokered service" (the 
+    services you find under `cf marketplace`) and "user provided
+    service"?
+-   What are the three different types of user provided service?
+    (Try `cf cups -h`)
+
 ### Lab Extras
 
 -   Install "mysql" cf plugin and use it to access the database (you
     will have to install `mysql` client first)
+    
+### Refereneces
 
+-   [Cloud Foundry Service Broker API](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
 
 ## 12 Factor Applications: Environment Variables & App Manifest 
    
@@ -78,17 +115,39 @@ with the following items.
 
 -   Use `cf create-app-manifest` and use the newly creted manifest file 
     to push an application    
--   Use `health-check-type` and `health-check-http-endpoint`   
+-   Use `health-check-type` and `health-check-http-endpoint` 
+
+### Lab extra special
+
+-   Create and run Spring Boot application in both locally and PCF  
+    -   It is a RESTful application
+    -   When accessed with "http://localhost:8080/hello", it displays
+        greeting message
+    -   Locally the greeting message should be maintained in the 
+        application.yml file
+    -   Deploy the same app in PCF
+    -   For PCF, the greeting message should be set via environment
+        variable
+    -   Redeploy the application using a manifest file
     
 ### References
 
 -   [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
 -   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
--   [Beyond 12 Factor (15 factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+-   [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
     
 
 ## Log Drain 
 
+### Challenge questions
+
+-   Which component of PCF architecture is responsible for 
+    collecting logs?
+-   What are the other log types other than STG, APP, CELL, RTR?
+    (Google `PCF log types`)
+-   What is the responsibility of Doppler?
+-   What is the responsibility of a developer in order to 
+    take advantage of PCF logging system?
 
 ## Manipulating Routes - Blue/Green Deployment
 
@@ -100,9 +159,20 @@ with the following items.
     (See “cf routes” and “cf create-route” commands.)
 -   When mapping or unmapping routes, do you have to restart
     or restage an application?
+-   How can you delete all routes that are not associated with
+    any apps?
+-   What is the logical steps of blue-green deployment?
+-   Is blue-green deployment suitable for major feature change?
   
 ## App Execution & Security Groups: Setting up App Monitoring with New Relic
+
+### Challenge questions
+
+-   What are the default ASG's?
     
+### Lab extras
+
+-   Try cf commands relevant to security groups    
 
 ## Staging and Running: Push the Web-UI
     
@@ -116,9 +186,20 @@ with the following items.
 
 ## Microservices: Container SSH
 
+### Challenge questions
+
+-   What are the environment variables that are automatically set
+    by PCF? (Google `Cloud Foundry Environment Variables`)
+
+### Lab extras
+
+-   Do `cf ssh <app>` and display the values of these environment
+    variables using `echo $<environment-variable-name>`
+
 ### References
 
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
+-   [Application continuum](http://www.appcontinuum.io/)
  
 ## Route Services: Deploying a route service for rate limiting
 
