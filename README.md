@@ -39,7 +39,6 @@ with the following items.
 -   What is the PCF component that handles the requests coming 
     from "cf cli"?
 -   What is the PCF component that handles routing?
-    
 -   How many containers are needed for pushing an app?
 -   Why do you see “container gets created and destroyed” as part of pushing app?
 -   What is the “org”/“space” structure in your PCF installation?
