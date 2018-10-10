@@ -156,6 +156,8 @@ with the following items.
    
 ### Lab extras 1  
 
+-   Try to overide the memory size by setting the `-m 768M` 
+    while using manifest
 -   Use `cf create-app-manifest` and use the newly creted manifest file 
     to push an application    
 -   Use `health-check-type` and `health-check-http-endpoint` 
