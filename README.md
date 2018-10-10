@@ -195,6 +195,16 @@ with the following items.
 -   In the PaperTrail dashboard, try to filter only logs from `CELL`
 -   Try different syslog drainers such as ELK/Kibana or Splunk
 
+### Trouble-shooting
+
+-   It takes a few minutes before you see the logs in the Papertrail 
+-   If things still do not work, make sure you create service using
+    `syslog` (as shown below) or `syslog-tls` 
+
+    ```
+    cf cups my-drain-service -l syslog://<papertrail-url>
+    ```
+
 ## Manipulating Routes - Blue/Green Deployment
 
 ### Challenge questions
@@ -288,7 +298,7 @@ with the following items.
 
 ### Lab extras
 
--   Try try tcp [tcp routing lab]
+-   Try [tcp routing lab]
 (http://dojoblog.dellemc.com/tcp-routing/tcp-routing-and-ssl/)
 -   Try `cf -v org sashin-org` to find out `total_reserved_route_ports` in PWS
 
