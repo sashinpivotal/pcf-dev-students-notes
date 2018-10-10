@@ -117,7 +117,8 @@ with the following items.
     
 ### Trouble-shooting
 
--   On Windows, the following command might result json conversion error
+-   On Windows, the `curl` command with `POST` might result json    
+    conversion error
 
     ```
     curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
