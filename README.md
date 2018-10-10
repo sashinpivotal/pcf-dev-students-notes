@@ -220,7 +220,9 @@ with the following items.
 1.  Add R1 to V2 - now V2 handles both R1 and R2
 1.  Remove R1 from V1 - now V2 handles 100% of R1
 1.  Remove R2 from V2 - now V2 handles only R1
-1.  
+2.  Rename V2 to V1
+
+
 
 ### Challenge questions
 
