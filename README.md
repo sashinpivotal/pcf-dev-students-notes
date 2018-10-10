@@ -192,6 +192,7 @@ with the following items.
 
 ### Lab extras
 
+-   In the PaperTrail dashboard, try to filter only logs from `CELL`
 -   Try different syslog drainers such as Kibana or Splunk
 
 ## Manipulating Routes - Blue/Green Deployment
