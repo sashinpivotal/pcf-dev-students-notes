@@ -116,6 +116,27 @@ with the following items.
 -   Install "mysql" cf plugin and use it to access the database (you
     will have to install `mysql` client first)
     
+### Trouble-shooting
+
+-   On Windows, the following command might result json conversion error
+
+    ```
+    curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
+    ```
+    
+    When it happens, you can capture the data part below into a file, i.e. 
+    `person.json`
+    
+    ```
+    {"firstName":"<some-key>","lastName":"<some-value>"}
+    ```
+    
+    Then you can use `-d @<file-name>`
+    
+    ```
+    curl -H "Content-Type: application/json" -X POST -d @person.json http://<YOUR-APP-URL>/people
+    ```
+    
 ### Refereneces
 
 -   [Cloud Foundry Service Broker API](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
