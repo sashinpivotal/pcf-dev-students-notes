@@ -150,7 +150,7 @@ with the following items.
 ### Challenge questions
 
 -   What is the value proposition of setting environment variables
-    in the manifest file regarding providing application
+    in the manifest file in regard to providing application
     configuration data?  Is it better than setting configuration
     data in the `application.properties` file?
    
