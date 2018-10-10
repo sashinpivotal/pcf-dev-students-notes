@@ -348,6 +348,8 @@ with the following items.
 
 ### Lab extras
 
+-   Do `cf ssh roster` (or any Java app) and see which command 
+    is executed
 -   Do `cf ssh <app>` and display the values of these environment
     variables using `echo $<environment-variable-name>`
 -   Also try `ps -ef` command 
@@ -401,7 +403,7 @@ with the following items.
 ### Trouble-shooting
 
 -   Increase the memory to 768M when deploying UAA application. 
-    Otherwise, the "cf
+    Otherwise, the `cf push` will fail.
 
   
 
