@@ -345,6 +345,8 @@ with the following items.
 
 -   What are the environment variables that are automatically set
     by PCF? (Google `Cloud Foundry Environment Variables`)
+-   What is the auto-configuration is being performed when
+    you push an application?  See [here](https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration) for an anwser.
 
 ### Lab extras
 
