@@ -178,6 +178,7 @@ with the following items.
 -   [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software) 
 -   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
 -   [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+-   [YMAL tutorial site](https://gettaurus.org/docs/YAMLTutorial/)
     
 
 ## Log Drains 
