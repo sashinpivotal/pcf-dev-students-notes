@@ -264,9 +264,6 @@ with the following items.
 -   Try PCF Metrics from the App Manager
 
 ## Staging and Running: Push the Web-UI
-
-### Supplemental topics
-
     
 ### Challenge questions
 
