@@ -290,6 +290,35 @@ with the following items.
 
 -   Redeploy the application using JDK version
 
+### Where `url` is used in the `web-ui` app
+
+- See `app/controllers/application_controller.rb` file
+
+   ```
+   get '/people' do
+     logged_in.check_token(request)
+     url = rest_backend_url
+     unless url
+      halt 500, "Please connect your app to the rest data service\n"
+      return
+     end
+     service = PeopleDataService.new(url)
+     @people = service.people
+     erb :people
+   end
+   ```
+
+   ```
+   def rest_backend_url
+     return nil if vcap_services.nil?
+     json = JSON.parse(vcap_services)
+     service_array = json['user-provided']
+     service_array.select do |service|
+       service['name'].start_with?('rest-backend')
+     end.first['credentials']['url']
+   end
+   ```
+
 ## Microservices: Container SSH
 
 ### Challenge questions (related to presentation)
