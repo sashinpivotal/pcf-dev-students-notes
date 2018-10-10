@@ -350,6 +350,7 @@ with the following items.
 
 -   Do `cf ssh <app>` and display the values of these environment
     variables using `echo $<environment-variable-name>`
+-   Also try `ps -ef` command 
 
 ### References
 
@@ -381,12 +382,11 @@ with the following items.
     
 ## Docker: Service Keys
 
-### Challenge question
+### Challenge questions
 
 -   Can you create service key from user provided service instance?
             
 ## TCP Routing
-
 
 ### Lab extras
 
@@ -409,6 +409,8 @@ with the following items.
 ### Challenge questions
 
 -   Which grant types are used in this lab?
+
+### References
     
 
        
