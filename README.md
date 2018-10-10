@@ -363,11 +363,11 @@ with the following items.
 
 -   When do you use "bind-service" and when do you use 
     "bind-route-service" command?
--   How do you find all the route services bound to a route?
+-   What `cf` command do you use to find all the route 
+    services bound to a route?
          
 ## Docker: Pusing a Docker App
 
-    
 ### Trouble-shooting
 
 -   You want to run the docker app with `--health-check-type process`. 
