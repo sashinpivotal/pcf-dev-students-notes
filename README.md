@@ -197,8 +197,9 @@ with the following items.
 
 ### Trouble-shooting
 
--   It takes a few minutes before you see the logs in the Papertrail 
--   If things still do not work, make sure you create service using
+-   It might take a few minutes before you see the logs in the Papertrail 
+-   If you do not see the logs in the Papertrail even after a few
+    minutes, make sure you create service using
     `syslog` (as shown below) or `syslog-tls` 
 
     ```
@@ -207,12 +208,17 @@ with the following items.
 
 ## Manipulating Routes - Blue/Green Deployment
 
+### Supplemental topics
+
+-   Semantic versioning
+
 ### Challenge questions
 
 -   Can an application have multiple routes?
 -   Can a route be applied to multiple applications?
 -   Can a route exist without an application associated with it? 
     (See “cf routes” and “cf create-route” commands.)
+-   What could be the use case of "cf create-route"?
 -   When mapping or unmapping routes, do you have to restart
     or restage an application?
 -   How can you delete all routes that are not associated with
