@@ -224,10 +224,17 @@ with the following items.
 -   How can you delete all routes that are not associated with
     any apps?
 -   What is the logical steps of blue-green deployment?
+-   How can we control the ratio of the traffic between V1.0.1 (blue) 
+    vs. V1.0.2 (green)?
 -   Is blue-green deployment suitable for major feature change?
 -   Can you describe which PCF components are responsible for
     updating the routing table whenever a new instance is created
     or old instance gets destroyed?
+    
+### Referrences
+
+-   [CanaryRelease](https://martinfowler.com/bliki/CanaryRelease.html)
+-   [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
   
 ## App Execution & Security Groups: Setting up App Monitoring with New Relic
 
