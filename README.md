@@ -301,8 +301,11 @@ with the following items.
 
 ### Where `url` is used in the `web-ui` app
 
-- See `app/controllers/application_controller.rb` file
+-  See `app/controllers/application_controller.rb` file
 
+   This code below is invoked when `People` button is clicked.
+   Inside this code `rest_backend_url` method is invoked.
+   
    ```
    get '/people' do
      logged_in.check_token(request)
@@ -316,6 +319,9 @@ with the following items.
      erb :people
    end
    ```
+   
+   The `rest_backend_url` method returns the value of
+   `user-provided`->`rest-backend`->`url`.
 
    ```
    def rest_backend_url
@@ -333,6 +339,7 @@ with the following items.
 ### Challenge questions (related to presentation)
 
 -   What are the complexities introduced in Microservices?
+-   Can "cloud native app" be monolith app?
 
 ### Challenge questions (related to lab)
 
@@ -348,7 +355,7 @@ with the following items.
 
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
 -   [Application continuum](http://www.appcontinuum.io/)
--   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s)
+-   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
  
 ## Route Services: Deploying a route service for rate limiting
 
