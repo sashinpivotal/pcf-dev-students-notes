@@ -338,7 +338,8 @@ with the following items.
 
 ### Supplemental topics
 
--   [Application continuum](http://www.appcontinuum.io/)
+-   [Application continuum slides](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html)
+-   [Application continuum website](http://www.appcontinuum.io/)
 
 ### Challenge questions (related to presentation)
 
