@@ -222,8 +222,6 @@ with the following items.
 1.  Remove R2 from V2 - now V2 handles only R1
 2.  Rename V2 to V1
 
-
-
 ### Challenge questions
 
 -   Can an application have multiple routes?
@@ -250,23 +248,50 @@ with the following items.
   
 ## App Execution & Security Groups: Setting up App Monitoring with New Relic
 
+### Supplemental topics
+
+-   Egress traffic
+-   Telemetry
+-   PCF Metrics vs APM tool
+
 ### Challenge questions
 
 -   What are the default ASG's?
     
 ### Lab extras
 
--   Try `cf` commands relevant to security groups    
+-   Try `cf` commands relevant to security groups   
+-   Try `cf stacks` 
+-   Try PCF Metrics from the App Manager
 
 ## Staging and Running: Push the Web-UI
+
+### Supplemental topics
+
     
 ### Challenge questions
 
 -   What could be use cases where you will have to do “cf restage” 
     (as opposed to “cf restart”)?
 -   Suppose you deployed an application with “cf push roster -m 768M”, 
-    what would be memory allocated when you re-deployed the same application 
-    with “cf push roster“?    
+    what would be memory allocated when you re-deployed the 
+    same application with “cf push roster“?  
+-   When you delete an application using `cf delete <app-name>`, is
+    the associated route gets deleted as well?
+    
+### Lab extras
+
+-   Try `cf buildpacks`
+-   What is the difference between `offline buildpack` 
+    vs `online buildpack`
+-   Use the online Java buildpack from the following website
+    (Google `Java buildpack`)
+
+    ```
+    https://github.com/cloudfoundry/java-buildpack
+    ```  
+
+-   Redeploy the application using JDK version
 
 ## Microservices: Container SSH
 
