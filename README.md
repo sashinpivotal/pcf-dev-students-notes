@@ -189,7 +189,11 @@ with the following items.
 
 ## Microservices: Container SSH
 
-### Challenge questions
+### Challenge questions (related to presentation)
+
+-   What are the complexities introduced in Microservices?
+
+### Challenge questions (related to lab)
 
 -   What are the environment variables that are automatically set
     by PCF? (Google `Cloud Foundry Environment Variables`)
@@ -203,6 +207,7 @@ with the following items.
 
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
 -   [Application continuum](http://www.appcontinuum.io/)
+-   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s)
  
 ## Route Services: Deploying a route service for rate limiting
 
