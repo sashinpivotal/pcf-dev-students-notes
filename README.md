@@ -86,7 +86,7 @@ with the following items.
 
 -  Which component of the PCF architecture maintains the `desired
    state` and `actual state` of the an application?
--  What are 4 levels of resilency (or recoverability) does PCF provide?
+-  What are 4 levels of resilency (or recoverability) PCF provides?
 -  When Diego system is asked to increase number of an application
    instances by 3, does it create all 3 instances in a single cell?
 -  What are the value proposition of PCF from the standpoint of
@@ -99,10 +99,10 @@ with the following items.
 -   What is a service? What is a service instance?
 -   What is the role of service broker?  What rest 
     operations does it support?
--   What is a market place? What is a plan?
+-   What is a `marketplace`? What is a plan?
 -   What is binding?  What is the end result of a binding?
--   How can you tell what services are bound to an application?
--   How can you tell what applications are bound a service?
+-   What `cf` command can you use to tell what services are bound to an application?
+-   What `cf` command can you use to tell what applications are bound a service?
 -   Once you bind an application to a service instance, do
     you do "restart" or "restaging"?
 -   What is the difference between "brokered service" (the 
@@ -128,7 +128,7 @@ with the following items.
     to push an application    
 -   Use `health-check-type` and `health-check-http-endpoint` 
 
-### Lab extra special
+### Lab extras 2
 
 -   Create and run Spring Boot application in both locally and PCF  
     -   It is a RESTful application
@@ -148,7 +148,7 @@ with the following items.
 -   [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
     
 
-## Log Drain 
+## Log Drains 
 
 
 
