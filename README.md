@@ -515,8 +515,8 @@ on behalf of a user (resource owner) using OAuth2.
 
 -   You, as a user, play the role of resource owner
 -   Proxy plays the role of `client`
--   `web-ui` plays the role of resource sever
--   `UAA` plays the role of `OAuth2` server
+-   The `web-ui` plays the role of resource sever
+-   The `UAA` plays the role of `OAuth2` server
 
 #### Service to Service communication
 
