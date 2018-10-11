@@ -9,6 +9,7 @@ with the following items.
 -   Lab extras
 -   Trouble-shooting tips
 -   References
+-   Solutions to the lab
 
 ## Basic Definitions: Getting Started w/ the CF CLI
 
@@ -69,6 +70,7 @@ with the following items.
     ```
     
 -   Try PCF autoscaling feature in PWS App Manager
+-   Try `app-autoscaler` service (do `cf marketplace`)
 
 
 ## Logging Metrics: Application Logs and & Events
@@ -350,6 +352,10 @@ with the following items.
 
 ## Microservices: Container SSH
 
+### Errors in the lab document
+
+-   Any reference to `static-web-ui` should have been `web-ui-static`
+
 ### Supplemental topics
 
 -   [Application continuum slides](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html)
@@ -383,7 +389,11 @@ with the following items.
  
 ## Route Services: Deploying a route service for rate limiting
 
-### Error in the lab document
+### Supplemental topcs
+
+-   Denial of service attack
+
+### Errors in the lab document
 
 -   The link to the `rate-limit-route-service.jar` is not set in 
     the document.  Download it from the lower-left corner of the 
@@ -395,6 +405,10 @@ with the following items.
     "bind-route-service" command?
 -   What `cf` command do you use to find all the `route 
     services` bound to a route?
+    
+### Solution to the lab
+
+-   (To be added)
          
 ## Docker: Pusing a Docker App
 
