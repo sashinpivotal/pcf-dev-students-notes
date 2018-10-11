@@ -4,7 +4,7 @@ The purpose of this document to supplement the official training materials
 with the following items.
 
 -   Supplemental topics
--   Errors in the lab document
+-   Error in the lab document
 -   Challenge questions
 -   Lab extras
 -   Trouble-shooting tips
@@ -352,7 +352,7 @@ with the following items.
 
 ## Microservices: Container SSH
 
-### Errors in the lab document
+### Error in the lab document
 
 -   Any reference to `static-web-ui` should have been `web-ui-static`
 
@@ -393,7 +393,7 @@ with the following items.
 
 -   Denial of service attack
 
-### Errors in the lab document
+### Error in the lab document
 
 -   The link to the `rate-limit-route-service.jar` is not set in 
     the document.  Download it from the lower-left corner of the 
@@ -412,7 +412,7 @@ with the following items.
          
 ## Docker: Pusing a Docker App
 
-### Errors in the lab document
+### Error in the lab document
 
 -   You want to run the `engineerbetter/worker-image` docker app 
     with `--health-check-type process`. 
@@ -449,7 +449,7 @@ with the following items.
     
 ## UAA: Deploying UAA as a CF app
 
-### Errors in the lab document
+### Error in the lab document
 
 -   Increase the memory to 768M in the `uaa-manifest.yml` file as shown below.
     (Currently it is set to `256M`.) Otherwise, the `cf push` will fail.
