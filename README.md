@@ -573,7 +573,13 @@ on behalf of a user (resource owner) using OAuth2.
 3.  Create Route Service proxy
     - Start `uaa-guard-proxy` routing service app
     - Create `authz` UPSI route service
-    - Bind `web-ui` to the `authz`
+    - Bind-route-service `web-ui` to the `authz`  
+
+    (You might experience an error indicating only a sinle 
+      route service can be bound. 
+      You will have to 
+      `unbind-route-service <rate-limiting-route-service>` 
+      if this happens.)
 
 ### Lab extras
 
