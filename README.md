@@ -412,26 +412,102 @@ with the following items.
 -   Increase the memory to 768M when deploying UAA application. 
     Otherwise, the `cf push` will fail.
 
-  
 
 ## UAA: Deplpying a Route service for authentication
+
+### Explaination of the lab
+
+#### Use case and Roles
+
+Proxy (client) wants to access `/secure` (resource) of 
+`web-ui` (resource server) 
+on behalf of a user (resource owner) using OAuth2.
+
+-   You, as a user, play the role of resource owner
+-   Proxy plays the role of `client`
+-   `web-ui` plays the role of resource sever
+-   `UAA` plays the role of `OAuth2` server
+
+#### Service to Service communication
+
+-   Before anything happens, any service (or microservice) that needs to directly
+    communicate with UAA has to register with UAA and gets assigned 
+    with `client id` (sometimes called `client name`) and 
+    `client secret`. 
+    -   You can think of Proxy, `web-ui`, and UAA as 
+        services (or microservices) running in PCF
+    -   Services communicate with each other using 
+        `Client credentials` grant type
+    -   This communication is secure because of only
+        the calling service knows about the `client secret`
+-   The Proxy has been registered with the UAA and assigned
+    with `client id` and `client secret` and configured with
+    -   GUARD_CLIENT_KEY: dashboard
+    -   GUARD_CLIENT_SECRET: dashboardsecret
+-   The `web-ui` has to be registered with the UAA and assigned
+    with its own  `client id` and `client secret`
+    -   We need to configure `web-ui` with the `client id` 
+        and `client secret`
+    -   This is the reason why we are creating `uaa-token` user
+        provided service and binding `web-ui` to it
+        -   client_name - oauth_showcase_authorization_code
+        -   client_secret - secret
+    -   We also need configure  `web-ui` with the URL of your UAA 
+
+#### Authorization code flow
+
+ 1.  User (resource owner) accesses the proxy (client) for
+     the first time
+ 1.  The proxy `redirects` the request to the `GUARD_LOGIN_URL`
+     endpoint of the UAA for authentication
+     -   This is the reason
+         why the proxy has to be configured with `GUARD_LOGIN_URL`
+     -   Note that client `redirects` so that browser displays
+         the login screen - there is no direct communucation between
+         proxy and the UAA yet
+     -   During this redirection to the UAA, the proxy also passes 
+         its callback address,
+         which is configured with `GUARD_DEFAULT_CALLBACK_URL`
+ 1.  User logs in with `marissa` and `koala`
+ 1.  User is then presented with `do you approve ..` pop-up screen
+ 1.  User approves
+ 1.  UAA then redirects the user back to the Proxy
+     with `authorization code`
+     -   UAA knows the redirect location, `GUARD_DEFAULT_CALLBACK_URL`,
+         because it is given in the step 2 above
+ 1.  Proxy then directly communicates with UAA asking for `access token`
+     passing the `authorization code`
+     -   This is a direct communcation between Proxy and UAA, hence
+         Proxy has to send `client id` (`GUARD_CLIENT_KEY`) and 
+         `client secret` (`GUARD_CLIENT_SECRET`)
+     -   Because `client secret` is secured in the Proxy, this is 
+         secure communication - in other words, even if someone has
+         the `authorization code`, he would not be able to perform
+         this action because he does not have the `client secret`
+ 1.  UAA verifies the `authorization code` and then issues 
+     `access token` to the Proxy
+ 1.  Proxy then access the `web-ui` with the access token
+ 1.  `web-ui` then verifies token and then returns the resource
 
 ### Challenge questions
 
 -   Which grant types are used in this lab?
 
 ### References
+
+-   [OAuth2 Basics](https://www.slideshare.net/SangShin1/spring4-security-oauth2)
+-   [Enabling Cloud Native Security](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa) slides 7-37
     
 ## After the training
 
 ### Course website
 
--   The course website will be available to you for a long time
--   This page will be also available for a long time
+-   The course website will be available to you even after the training
+-   This "student notes" page will be also available even after the training
 
 ### PCF access
 
--   The 5G space given to you during the training will be 
+-   The 5G memory given to you during the training will be 
     deleted right after the training
 -   You can still do use PWS 2G free account to do the lab
     on your own 
@@ -439,7 +515,8 @@ with the following items.
     means you should be able to do most labs without a problem
     except blue-green deployment
 -   You can also use Java option to reduce the memory requirement
-    of your Spring app as following
+    of your Spring app as following - with this setting, you
+    should be able to do even blue-green deployment
     
     ```
     cf push spring-music -p ./build/libs/spring-music-1.0.jar --random-route -m 512M --no-start
@@ -462,6 +539,8 @@ with the following items.
       - route: spring-music-unemigrant-nontransportation.cfapps.io
     ```
     
+### Contacting instructors
 
+-   Feel free to contact the instructor for any issues/ideas/suggestions
        
     
