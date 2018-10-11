@@ -424,6 +424,7 @@ with the following items.
 ### Supplemental topics
 
 -   PKS vs PAS (PCF) for running Docker apps
+-   Health check - default behavior in PCF is checking a port 8080
 
 ### Error in the lab document
 
@@ -443,6 +444,7 @@ with the following items.
     ```
     ...
     [HEALTH/0] ERR Failed to make TCP connection to port 8080: connection refused
+    [CELL/0] ERR ... health check never passed.
     ```
     
     
