@@ -389,6 +389,11 @@ with the following items.
  
 ## Route Services: Deploying a route service for rate limiting
 
+### Error in the document
+
+-   Rename `manifest.yml` to `manifest-old.yml' so that it does not
+    get picked up when you deploy the route service application
+
 ### Supplemental topcs
 
 -   Denial of service attack
@@ -418,12 +423,20 @@ with the following items.
 
 ### Supplemental topics
 
--   PKS
+-   PKS vs PAS (PCF) for running Docker apps
 
 ### Error in the lab document
 
+-   Rename `manifest.yml` to `manifest-old.yml' so that it does not
+    get picked up
+
 -   You want to run the `engineerbetter/worker-image` docker app 
     with `--health-check-type process`. 
+    
+    ```
+    cf push my-docker-sang-shin -o engineerbetter/worker-image --health-check-type process
+    ```
+    
     Otherwise, you will experience the following after a while.
     In this lab, this will not change the outcome of your lab, however.
     
