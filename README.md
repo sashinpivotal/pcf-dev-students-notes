@@ -369,6 +369,12 @@ with the following items.
  
 ## Route Services: Deploying a route service for rate limiting
 
+### Lab Document error
+
+-   The link to the `rate-limit-route-service.jar` is not set in 
+    the document.  Download it from the lower-left corner of the 
+    course website.
+
 ### Challenge questions
 
 -   When do you use "bind-service" and when do you use 
