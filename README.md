@@ -10,6 +10,7 @@ with the following items.
 -   Trouble-shooting tips
 -   References
 -   Solutions to the lab
+-   After the training (certification, etc.)
 
 ## Basic Definitions: Getting Started w/ the CF CLI
 
