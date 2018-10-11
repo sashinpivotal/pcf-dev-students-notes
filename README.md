@@ -475,10 +475,10 @@ on behalf of a user (resource owner) using OAuth2.
  1.  User logs in with `marissa` and `koala`
  1.  User is then presented with `do you approve ..` pop-up screen
  1.  User approves
- 1.  UAA then redirects the user back to the Proxy
+ 1.  UAA then redirects the request back to the Proxy
      with `authorization code`
-     -   UAA knows the redirect location, `GUARD_DEFAULT_CALLBACK_URL`,
-         because it is given in the step 2 above
+     -   UAA knows the redirect target location, `GUARD_DEFAULT_CALLBACK_URL`,
+         because it is given to it in the step 2 above
  1.  Proxy then directly communicates with UAA asking for `access token`
      passing the `authorization code`
      -   This is a direct communcation between Proxy and UAA, hence
@@ -486,12 +486,14 @@ on behalf of a user (resource owner) using OAuth2.
          `client secret` (`GUARD_CLIENT_SECRET`)
      -   Because `client secret` is secured in the Proxy, this is 
          secure communication - in other words, even if someone has
-         the `authorization code`, he would not be able to perform
+         the `authorization code`, which is indeed visible to
+         the public eye since it is passed as part of redirected
+         request, he would not be able to perform
          this action because he does not have the `client secret`
  1.  UAA verifies the `authorization code` and then issues 
      `access token` to the Proxy
- 1.  Proxy then access the `web-ui` with the access token
- 1.  `web-ui` then verifies token and then returns the resource
+ 1.  Proxy then access the `web-ui` resource server with the access token
+ 1.  The `web-ui` then verifies token and then returns the resource
 
 ### Lab extras
 
