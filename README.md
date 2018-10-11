@@ -386,6 +386,8 @@ with the following items.
 -   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
 -   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
 -   [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems-ebook/dp/B00T3N7XB4/ref=sr_1_1?ie=UTF8&qid=1539207745&sr=8-1&keywords=microservices+sam+newman) book
+-   [Cloud Native Application by Josh Long](https://www.oreilly.com/library/view/cloud-native-java/9781449374631/)
+-   [Release it by Michael T. Nygard](https://pragprog.com/book/mnee/release-it)
  
 ## Route Services: Deploying a route service for rate limiting
 
