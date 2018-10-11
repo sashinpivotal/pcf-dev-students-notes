@@ -493,9 +493,22 @@ on behalf of a user (resource owner) using OAuth2.
  1.  Proxy then access the `web-ui` with the access token
  1.  `web-ui` then verifies token and then returns the resource
 
-### Challenge questions
+### Lab extras
 
--   Which grant types are used in this lab?
+-   Observe the locally maintained access token after "password" grant flow
+
+    ```
+    (do `cf login`)
+    cd <Home-directory>/.cf
+    cat config.json (or type config.json for Windows)
+    ```
+    
+-   Observe that everytime a REST call is made to the `Cloud Controller',
+    access token is sent in the `Authorization` field as a bearer token
+    
+    ```
+    cf -v app roster
+    ```
 
 ### References
 
