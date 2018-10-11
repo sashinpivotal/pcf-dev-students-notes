@@ -450,8 +450,16 @@ with the following items.
     or set it in the manifest file
     
     ```
-    envs:
-      JAVA_OPTS -Xss228K
+    applications:
+    - name: spring-music
+      disk_quota: 1G
+      env:
+        JAVA_OPTS: -Xss228K
+      instances: 1
+      memory: 512M
+      path: ./build/libs/spring-music-1.0.jar
+      routes:
+      - route: spring-music-unemigrant-nontransportation.cfapps.io
     ```
     
 
