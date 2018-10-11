@@ -564,13 +564,13 @@ on behalf of a user (resource owner) using OAuth2.
 ### Summary steps of this lab
 
 1.  Deploy UAA server
-2.  Create `uaa-tokens` user provided service instance(UPSI) capturing
-    -   UAA route
-    -   `client id` and `client secret` of the `web-ui`
-2.  Bind `web-ui` to the `uaa-tokens` upsi using `cf bind-service` command
-3.  Start `uaa-guard-proxy` routing service app
-4.  Create `authz` UPSI route service
-5.  Bind `web-ui` to the `authz`
+2.  Bind `web-ui to UAA
+    -   Create `uaa-tokens` user provided service instance(UPSI) capturing UAA route `client id` and `client secret` of the `web-ui`
+    -   Bind `web-ui` to the `uaa-tokens` upsi using `cf bind-service` command
+3.  Create Route Service proxy
+    - Start `uaa-guard-proxy` routing service app
+    - Create `authz` UPSI route service
+    - Bind `web-ui` to the `authz`
 
 ### Lab extras
 
