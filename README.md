@@ -4,6 +4,7 @@ The purpose of this document to supplement the official training materials
 with the following items.
 
 -   Supplemental topics
+-   Lab document errors
 -   Challenge questions
 -   Lab extras
 -   Trouble-shooting tips
@@ -384,10 +385,16 @@ with the following items.
          
 ## Docker: Pusing a Docker App
 
-### Trouble-shooting
+### Lab document error
 
--   You want to run the docker app with `--health-check-type process`. 
-    Otherwise, you will experience `[HEALTH/0] ERR Failed to make TCP connection to port 8080: connection refused`
+-   You want to run the `engineerbetter/worker-image` docker app 
+    with `--health-check-type process`. 
+    Otherwise, you will experience 
+    
+    ```
+    ...
+    [HEALTH/0] ERR Failed to make TCP connection to port 8080: connection refused
+    ```
     
     
 ### Lab Extras
