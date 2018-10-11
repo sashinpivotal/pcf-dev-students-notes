@@ -55,6 +55,19 @@ with the following items.
 
 ### Lab Extras
 
+-   Install and use "open" plugin from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
+
+    ```
+    cf install-plugin -r CF-Community "open"
+    ```
+    
+    You can then use it as shown below, which will automatically opens
+    a browser with the correct URL of the `roster` app.
+    
+    ```
+    cf open roster
+    ```
+    
 -   Try PCF autoscaling feature in PWS App Manager
 
 
