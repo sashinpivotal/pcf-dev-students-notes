@@ -456,7 +456,7 @@ on behalf of a user (resource owner) using OAuth2.
         provided service and binding `web-ui` to it
         -   client_name - oauth_showcase_authorization_code
         -   client_secret - secret
-    -   We also need configure  `web-ui` with the URL of your UAA 
+    -   We also need configure  `web-ui` with the URL of the UAA 
 
 #### Authorization code flow
 
