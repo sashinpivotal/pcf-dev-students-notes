@@ -407,10 +407,14 @@ with the following items.
     
 ## UAA: Deploying UAA as a CF app
 
-### Trouble-shooting
+### Trouble-shooting (Error in the lab)
 
--   Increase the memory to 768M when deploying UAA application. 
+-   Increase the memory to 768M in the `uaa-manifest.yml` file.
     Otherwise, the `cf push` will fail.
+    
+    ```
+    memory: 768M
+    ```
 
 
 ## UAA: Deplpying a Route service for authentication
