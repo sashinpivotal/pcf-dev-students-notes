@@ -4,7 +4,7 @@ The purpose of this document to supplement the official training materials
 with the following items.
 
 -   Supplemental topics
--   Lab document errors
+-   Errors in the lab document
 -   Challenge questions
 -   Lab extras
 -   Trouble-shooting tips
@@ -385,7 +385,7 @@ with the following items.
          
 ## Docker: Pusing a Docker App
 
-### Lab document error
+### Errors in the lab document
 
 -   You want to run the `engineerbetter/worker-image` docker app 
     with `--health-check-type process`. 
@@ -422,7 +422,7 @@ with the following items.
     
 ## UAA: Deploying UAA as a CF app
 
-### Trouble-shooting (Error in the lab)
+### Errors in the lab document
 
 -   Increase the memory to 768M in the `uaa-manifest.yml` file.
     Otherwise, the `cf push` will fail.
