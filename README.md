@@ -401,7 +401,9 @@ with the following items.
 
 -   Try [tcp routing lab]
 (http://dojoblog.dellemc.com/tcp-routing/tcp-routing-and-ssl/)
--   Try `cf -v org sashin-org` to find out `total_reserved_route_ports` in PWS
+-   Try `cf -v org sashin-org` to find out `total_reserved_route_ports` 
+    in your PCF installation.  (In PWS, it is set to 0, hence you
+    will not be able to finish the lab above.)
 
      
     
