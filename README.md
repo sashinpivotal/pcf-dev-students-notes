@@ -416,11 +416,7 @@ with the following items.
     
 ### Solution to the lab
 
-1.  Deploy the rate limiting route service app
-
-    ```
-    cf push 
-    ```
+(to be added)
          
 ## Docker: Pusing a Docker App
 
