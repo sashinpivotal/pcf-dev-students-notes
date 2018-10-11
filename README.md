@@ -495,10 +495,11 @@ on behalf of a user (resource owner) using OAuth2.
 
 ### Lab extras
 
--   Observe the locally maintained access token after "password" grant flow
+-   Observe the locally maintained access token after performing
+    `cf login -a api.run.pivotal.io` (this is an example of
+    `password` grant flow)
 
     ```
-    (do `cf login`)
     cd <Home-directory>/.cf
     cat config.json (or type config.json for Windows)
     ```
