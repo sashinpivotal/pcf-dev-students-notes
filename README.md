@@ -26,8 +26,10 @@ with the following items.
 
 ### Trouble-shooting
 
--   If you are using GitBash under Windows, try the following in order to
-    establish a connection to the PCF
+-   If you are using GitBash under Windows, you might 
+    experience a problem when you do 
+    `cf login -a api.run.pivotal.io`.
+    Try the following if that happens.
     
     `cf auth <username> <password>`
 
@@ -138,7 +140,7 @@ with the following items.
     
 ### Trouble-shooting
 
--   On Windows, the `curl` command with `POST` might result json    
+-   On Windows, the `curl` command with `POST` might result json   
     conversion error
 
     ```
@@ -318,6 +320,27 @@ with the following items.
 
 ### Where `url` is used in the `web-ui` app
 
+-  Assuming you did `cf bind-service web-ui rest-backend`,
+   the `web-ui` should have the following `VCAP_SERVICES`
+
+   ```
+   {
+ "VCAP_SERVICES": {
+  "user-provided": [
+   {
+    "binding_name": null,
+    "credentials": {
+     "url": "http://roster_sang_shin.cfapps.io"
+    },
+    "instance_name": "rest-backend",
+    "label": "user-provided",
+    "name": "rest-backend",
+    "syslog_drain_url": "",
+    "tags": [],
+    "volume_mounts": []
+   },
+   ```
+
 -  See `app/controllers/application_controller.rb` file
 
    This code below is invoked when `People` button is clicked.
@@ -338,7 +361,7 @@ with the following items.
    ```
    
    The `rest_backend_url` method returns the value of
-   `user-provided`->`rest-backend`->`url`.
+   `user-provided`-->`rest-backend`-->`credentials`-->`url`.
 
    ```
    def rest_backend_url
