@@ -438,8 +438,8 @@ with the following items.
     cf push my-docker-sang-shin -o engineerbetter/worker-image --health-check-type process
     ```
     
-    Otherwise, you will experience the following after a while.
-    In this lab, this will not change the outcome of your lab, however.
+    Otherwise, you will experience the following behavior. (This might
+    result in `Waiting the app to
     
     ```
     ...
