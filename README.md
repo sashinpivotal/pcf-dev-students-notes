@@ -397,9 +397,30 @@ with the following items.
 -   Rename `manifest.yml` to `manifest-old.yml' so that it does not
     get picked up when you deploy the route service application
 
+### Solution Procedure
+
+1.  Create Rate Limit App:
+
+    `cf push {name of your rate limit app} -b java_buildpack -m 768M -p ./rate-limit-route-service.jar`
+
+2.  Create Service instance
+
+    `cf cups rate-limit-service -r https://{route from your pushed rate limit app}`
+
+    You can get the route of your rate limit app via
+    `cf app {name of your rate limit app}`.
+
+3.  Bind Route Service to Route
+
+    `cf bind-route-service cfapps.io rate-limit-service --hostname {host name of your web-ui route}`
+
+    You can get the web-ui route via `cf app {web ui app name}`
+
 ### Supplemental topcs
 
+Use cases:
 -   Denial of service attack
+-   Multi-tenant rate quotas
 
 ### Error in the lab document
 
@@ -418,7 +439,7 @@ with the following items.
 
 (to be added)
          
-## Docker: Pusing a Docker App
+## Docker: Pushing a Docker App
 
 ### Supplemental topics
 
@@ -482,9 +503,9 @@ with the following items.
     ```
 
 
-## UAA: Deplpying a Route service for authentication
+## UAA: Deploying a Route service for authentication
 
-### Explaination of the OAuth2 in the context of this Lab
+### Explanation of the OAuth2 in the context of this Lab
 
 #### Use case and Roles
 
