@@ -383,7 +383,7 @@ with the following items.
  
 ## Route Services: Deploying a route service for rate limiting
 
-### Lab Document error
+### Error in the lab document
 
 -   The link to the `rate-limit-route-service.jar` is not set in 
     the document.  Download it from the lower-left corner of the 
@@ -563,6 +563,11 @@ on behalf of a user (resource owner) using OAuth2.
 
 -   The course website will be available to you even after the training
 -   This "student notes" page will be also available even after the training
+
+### Cerfification
+
+-   You can take certification exam as described in the 
+    [Cloud Foundry website](https://www.cloudfoundry.org/certification/)
 
 ### PCF access
 
