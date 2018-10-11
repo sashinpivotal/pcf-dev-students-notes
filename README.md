@@ -408,15 +408,24 @@ with the following items.
     
 ### Solution to the lab
 
--   (To be added)
+1.  Deploy the rate limiting route service app
+
+    ```
+    cf push 
+    ```
          
 ## Docker: Pusing a Docker App
+
+### Supplemental topics
+
+-   PKS
 
 ### Error in the lab document
 
 -   You want to run the `engineerbetter/worker-image` docker app 
     with `--health-check-type process`. 
-    Otherwise, you will experience 
+    Otherwise, you will experience the following after a while.
+    In this lab, this will not change the outcome of your lab, however.
     
     ```
     ...
