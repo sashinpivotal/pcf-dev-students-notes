@@ -424,8 +424,8 @@ with the following items.
 
 ### Errors in the lab document
 
--   Increase the memory to 768M in the `uaa-manifest.yml` file.
-    Otherwise, the `cf push` will fail.
+-   Increase the memory to 768M in the `uaa-manifest.yml` file as shown below.
+    (Currently it is set to `256M`.) Otherwise, the `cf push` will fail.
     
     ```
     memory: 768M
@@ -434,7 +434,7 @@ with the following items.
 
 ## UAA: Deplpying a Route service for authentication
 
-### Explaination of the lab
+### Explaination of the OAuth2 in the context of this Lab
 
 #### Use case and Roles
 
@@ -509,6 +509,17 @@ on behalf of a user (resource owner) using OAuth2.
      `access token` to the Proxy
  1.  Proxy then access the `web-ui` resource server with the access token
  1.  The `web-ui` then verifies token and then returns the resource
+
+### Summary steps of this lab
+
+1.  Deploy UAA server
+2.  Create `uaa-tokens` user provided service instance(UPSI) capturing
+    -   UAA route
+    -   `client id` and `client secret` of the `web-ui`
+2.  Bind `web-ui` to the `uaa-tokens` upsi using `cf bind-service` command
+3.  Start `uaa-guard-proxy` routing service app
+4.  Create `authz` UPSI route service
+5.  Bind `web-ui` to the `authz`
 
 ### Lab extras
 
