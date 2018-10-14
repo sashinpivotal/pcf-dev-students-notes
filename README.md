@@ -495,7 +495,8 @@ Use cases:
 ### Lab Extras
 
 -   Try `cf feature-flags` and note that `diego_docker` is enabled
--   Try hello docker image: `tutum/hello-world`
+-   Try hello docker image: `tutum/hello-world` (if `diego_docker`
+    is enabled)
     
 ## Docker: Service Keys
 
