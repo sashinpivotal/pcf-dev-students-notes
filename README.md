@@ -362,6 +362,7 @@ with the following items.
    
    The `rest_backend_url` method returns the value of
    `user-provided`-->`rest-backend`-->`credentials`-->`url`.
+   
 
    ```
    def rest_backend_url
@@ -373,6 +374,7 @@ with the following items.
      end.first['credentials']['url']
    end
    ```
+
 
 ## Microservices: Container SSH
 
