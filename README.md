@@ -322,7 +322,7 @@ with the following items.
 
 -  Assuming you did `cf bind-service web-ui rest-backend`,
    the `web-ui` should have the following `VCAP_SERVICES`
-
+   
    ```
    {
  "VCAP_SERVICES": {
@@ -361,7 +361,7 @@ with the following items.
    ```
    
    The `rest_backend_url` method returns the value of
-   `user-provided`-->`rest-backend`-->`credentials`-->`url`.
+   `user-provided` `rest-backend` `credentials` `url`.
    
 
    ```
