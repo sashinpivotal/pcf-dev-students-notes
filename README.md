@@ -14,16 +14,6 @@ with the following items.
 
 ## Basic Definitions: Getting Started w/ the CF CLI
 
-### Supplemental topics
-
--   IaaS
--   CaaS -> Docker, Kubernetes, PKS
--   PaaS -> Cloud Foundry, PAS (pre-2.0 Elastic Runtime)
--   FaaS
--   BOSH - The secret sauce of Cloud Foundry
--   App Manager
--   Op Manager - value add of PCF (Operator)
-
 ### Trouble-shooting
 
 -   If you are using GitBash under Windows, you might 
