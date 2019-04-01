@@ -134,6 +134,8 @@ with the following items.
 
 -   Install "mysql" cf plugin and use it to access the database (you
     will have to install `mysql` client first)
+-   Investigate Autoscaler plugin behavior - it is
+    a backing service.
 
 ### Trouble-shooting
 
