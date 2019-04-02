@@ -204,7 +204,7 @@ with the following items.
 -   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
 -   [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
 -   [YAML tutorial site](https://gettaurus.org/docs/YAMLTutorial/)
-
+-   [Cloud Foundry Environment Variables](https://docs.pivotal.io/pivotalcf/2-4/devguide/deploy-apps/environment-variable.html)
 
 ## Log Drains
 
@@ -242,6 +242,8 @@ with the following items.
 
 ### Challenge questions
 
+-   How do you construct a route?
+-   How do you verify existence of a route?
 -   Can an application have multiple routes?
 -   Can a route be applied to multiple applications?
 -   Can a route exist without an application associated with it?
