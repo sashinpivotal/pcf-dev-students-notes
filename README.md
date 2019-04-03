@@ -242,8 +242,9 @@ with the following items.
 
 ### Challenge questions
 
--   How do you construct a route?
+-   How is a route constructed?
 -   How do you verify existence of a route?
+    (See `cf check-route`)
 -   Can an application have multiple routes?
 -   Can a route be applied to multiple applications?
 -   Can a route exist without an application associated with it?
@@ -386,7 +387,7 @@ with the following items.
 
     You can get the web-ui route via `cf app {web ui app name}`
 
-### Supplemental topcs
+### Supplemental topics
 
 Use cases:
 -   Denial of service attack
@@ -395,7 +396,8 @@ Use cases:
 ### Error in the lab document
 
 -   The link to the `rate-limit-route-service.jar` is not set in
-    the document.  Download it from the lower-left corner of the
+    the document.
+    Download it from the lower-left corner of the
     course website.
 
 ### Challenge questions
@@ -405,9 +407,9 @@ Use cases:
 -   What `cf` command do you use to find all the `route
     services` bound to a route?
 
-### Solution to the lab
+### References
 
-(to be added)
+-   [Route Services](https://docs.cloudfoundry.org/services/route-services.html)
 
 ## Docker: Pushing a Docker App
 
