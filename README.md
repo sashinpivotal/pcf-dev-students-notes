@@ -4,15 +4,22 @@ The purpose of this document to supplement the official training materials
 with the following items.
 
 -   Supplemental topics
+
 -   Error in the lab document
+
 -   Challenge questions
+
 -   Lab extras
+
 -   Trouble-shooting tips
+
 -   References
+
 -   Solutions to the lab
+
 -   After the training (certification, etc.)
 
-## Basic Definitions: Getting Started w/ the CF CLI
+## Basic Definitions - Getting Started w/ the CF CLI
 
 ### Trouble-shooting
 
@@ -25,9 +32,9 @@ with the following items.
 
 ## Lab extras
 
--   Try [PCF AppManager](https://login.run.pivotal.io)
+- Try [PCF AppManager](https://login.run.pivotal.io)
 
-## Tech Overview: Pushing Apps
+## Tech Overview - Pushing Apps
 
 ### Challenge questions
 
@@ -38,27 +45,28 @@ with the following items.
 -   Why do you see “container gets created and destroyed” as part of pushing app?
 -   What is the “org”/“space” structure in your PCF installation?
 -   Why do you have to use “--random-route”?
--   What is the “cf push” option that lets you specify the hostname
-    part of a route? (“cf push -h”)
+-   What is the `cf push` option that lets you specify the hostname
+    part of a route?
+    (`cf push -h`)
 
 ### References
 
--   [PCF Architectural diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/cloudfoundry-incubator/diego-design-notes/master/clickable-diego-overview/clickable-diego-overview.html)
+- [PCF Architectural diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/cloudfoundry-incubator/diego-design-notes/master/clickable-diego-overview/clickable-diego-overview.html)
 
-## Core Themes: Scaling Apps
+## Core Themes - Scaling Apps
 
 ### Lab Extras
 
 -   Install and use "open" plugin from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
 
-    ```
+    ```bash
     cf install-plugin -r CF-Community "open"
     ```
 
     You can then use it as shown below, which will automatically opens
     a browser with the correct URL of the `roster` app.
 
-    ```
+    ```bash
     cf open roster
     ```
 
@@ -72,8 +80,7 @@ with the following items.
 
 -   See here [Spring Boot App Manager integration](https://docs.pivotal.io/pivotalcf/2-4/console/using-actuators.html)
 
-
-## Logging Metrics: Application Logs and & Events
+## Logging Metrics - Application Logs and & Events
 
 ### Challenge questions
 
@@ -85,17 +92,16 @@ with the following items.
 -   What is the responsibility of a developer in order to
     take advantage of PCF logging system?
 
-
-## Resiliency: Application Resiliency
+## Resiliency - Application Resiliency
 
 ### Trouble-shooting
 
--  If you see the following message when you send the `kill` request,
-   it is an expected behavior.
+-   If you see the following message when you send the `kill` request,
+    it is an expected behavior.
 
-   ```
-   502 Bad Gateway: Registered endpoint failed to handle the request
-   ```
+    ```bash
+    502 Bad Gateway: Registered endpoint failed to handle the request
+    ```
 
     The `kill` operation invokes a `System.exit` command during the
     request, the request never sends a response to the go-router,
@@ -103,30 +109,46 @@ with the following items.
 
 ### Challenge questions
 
--  Which component of the PCF architecture maintains the `desired
-   state` and `actual state` of the an application?
--  What are 4 levels of resilency (or recoverability) PCF provides?
--  When Diego system is asked to increase number of an application
-   instances by 3, does it create all 3 instances in a single cell?
--  What are the value proposition of PCF from the standpoint of
-   2nd-day operation?
+-   Which component of the PCF architecture maintains the `desired
+    state` and `actual state` of the an application?
+-   What are 4 levels of resilency (or recoverability) PCF provides?
+-   When Diego system is asked to increase number of an application
+    instances by 3, does it create all 3 instances in a single cell?
+-   What are the value proposition of PCF from the standpoint of
+    2nd-day operation?
+-   What are the health types supported by Cloud Foundry?
+    When would you use each?
 
-## Services: Creating & Bind Services
+## Lab Extras
+
+-   Configure the roster application with health check type of `http` to
+    use the roster application actuator `/health` endpoint.
+
+## References
+
+- [Cloud Foundry health checks](https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html)
+
+## Services - Creating & Bind Services
 
 ### Chllenge questions
 
--   What is a service? What is a service instance?
--   What is the role of service broker?  What rest
-    operations does it support?
--   What is a `marketplace`? What is a `plan`?
--   What is binding?  What is the end result of a binding?
--   What `cf` command can you use to tell what services are bound to an application?
--   What `cf` command can you use to tell what applications are bound a service?
--   Once you bind an application to a service instance, do
-    you do "restart" or "restaging"?
--   What is the difference between "brokered service" (the
-    services you find under `cf marketplace`) and "user provided
-    service"?
+-   What is a service?
+    What is a service instance?
+-   What is the role of service broker?
+    What rest operations does it support?
+-   What is a `marketplace`?
+    What is a `plan`?
+-   What is binding?
+    What is the end result of a binding?
+-   What `cf` command can you use to tell what services are bound to an
+    application?
+-   What `cf` command can you use to tell what applications are bound a
+    service?
+-   Once you bind an application to a service instance,
+    do you do "restart" or "restaging"?
+-   What is the difference between "brokered service"
+    (the services you find under `cf marketplace`)
+    and "user provided service"?
 -   What are the three different types of user provided service?
     (Try `cf cups -h`)
 
@@ -142,40 +164,42 @@ with the following items.
 -   On Windows, the `curl` command with `POST` might result json
     conversion error
 
-    ```
+    ```bash
     curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
     ```
 
     When it happens, you can capture the data part below into a file, i.e.
     `person.json`
 
-    ```
+    ```bash
     {"firstName":"<some-key>","lastName":"<some-value>"}
     ```
 
     Then you can use `-d @<file-name>`
 
-    ```
+    ```bash
     curl -H "Content-Type: application/json" -X POST -d @person.json http://<YOUR-APP-URL>/people
     ```
 
 ### References
 
--   [Cloud Foundry Service Broker API](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
+- [Cloud Foundry Service Broker API](https://github.com/openservicebrokerapi/servicebroker/blob/v2.12/spec.md)
 
-## 12 Factor Applications: Environment Variables & App Manifest
+## 12 Factor Applications - Environment Variables & App Manifest
 
 ### Challenge questions
 
 -   What is the value proposition of setting environment variables
     in the manifest file in regard to providing application
-    configuration data?  Is it better than setting configuration
-    data in the `application.properties` file?
+    configuration data?
+    Is it better than setting configuration data in the
+    `application.properties` file?
 -   When you have many environment variables to set or complex
     configuration to do, what would be a better option than
-    using environment variables?  (Answer: Think of the usage of
-    another backing service called config server - under PWS, it
-    is called `p-config-server`.)
+    using environment variables?
+    (Answer:
+    Think of the usage of another backing service called config server -
+    under PWS, it is called `p-config-server`.)
 
 ### Lab extras 1
 
@@ -189,38 +213,39 @@ with the following items.
 
 -   Create and run Spring Boot application in both locally and PCF
     -   It is a RESTful application
-    -   When accessed with "http://localhost:8080/hello", it displays
-        greeting message
-    -   Locally the greeting message should be maintained in the
-        application.yml file
+    -   When accessed with "http://localhost:8080/hello",
+        it displays greeting message
+    -   The greeting message is maintained in the `application.yml` file
+        when run locally.
     -   Deploy the same app in PCF
-    -   For PCF, the greeting message should be set via environment
+    -   For PCF, the greeting message must be set via environment
         variable
     -   Redeploy the application using a manifest file
 
 ### References
 
--   [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
--   [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
--   [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
--   [YAML tutorial site](https://gettaurus.org/docs/YAMLTutorial/)
--   [Cloud Foundry Environment Variables](https://docs.pivotal.io/pivotalcf/2-4/devguide/deploy-apps/environment-variable.html)
+- [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
+- [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+- [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+- [YAML tutorial site](https://gettaurus.org/docs/YAMLTutorial/)
+- [Cloud Foundry Environment Variables](https://docs.pivotal.io/pivotalcf/2-4/devguide/deploy-apps/environment-variable.html)
 
 ## Log Drains
 
 ### Lab extras
 
--   In the PaperTrail dashboard, try to filter only logs from `CELL`
--   Try different syslog drainers such as ELK/Kibana or Splunk
+- In the PaperTrail dashboard, try to filter only logs from `CELL`
+- Try different syslog drainers such as ELK/Kibana or Splunk
 
 ### Trouble-shooting
 
--   It might take a few minutes before you see the logs in the Papertrail
+-   It might take a few minutes before you see the logs in the
+    Papertrail
 -   If you do not see the logs in the Papertrail even after a few
     minutes, make sure you create service using
     `syslog` (as shown below) or `syslog-tls`
 
-    ```
+    ```bash
     cf cups my-drain-service -l syslog://<papertrail-url>
     ```
 
@@ -228,17 +253,17 @@ with the following items.
 
 ### Supplemental topics
 
--   Semantic versioning - Major.Minor.Patch
--   Feature toggles
+- Semantic versioning - Major.Minor.Patch
+- Feature toggles
 
 ### Steps for blue-green deployment
 
-1.  V1 - R1 is currently running
-1.  Create V2 with R2 and make sure it is working
-1.  Add R1 to V2 - now V2 handles both R1 and R2
-1.  Remove R1 from V1 - now V2 handles 100% of R1
-1.  Remove R2 from V2 - now V2 handles only R1
-1.  Rename V2 to V1
+1. V1 - R1 is currently running
+1. Create V2 with R2 and make sure it is working
+1. Add R1 to V2 - now V2 handles both R1 and R2
+1. Remove R1 from V1 - now V2 handles 100% of R1
+1. Remove R2 from V2 - now V2 handles only R1
+1. Rename V2 to V1
 
 ### Challenge questions
 
@@ -249,6 +274,8 @@ with the following items.
 -   Can a route be applied to multiple applications?
 -   Can a route exist without an application associated with it?
     (See “cf routes” and “cf create-route” commands.)
+-   Why might you use an internal route?
+-   What are prequisites to using an internal route?
 -   What could be the use case of "cf create-route"?
 -   When mapping or unmapping routes, do you have to restart
     or restage an application?
@@ -256,7 +283,7 @@ with the following items.
     any apps?
 -   What is the logical steps of blue-green deployment?
 -   How can we control the ratio of the traffic between V1.0.1 (blue)
-    vs. V1.0.2 (green)?
+    versus V1.0.2 (green)?
 -   Is blue-green deployment suitable for major feature change?
 -   Can you describe which PCF components are responsible for
     updating the routing table whenever a new instance is created
@@ -264,27 +291,28 @@ with the following items.
 
 ### References
 
--   [CanaryRelease](https://martinfowler.com/bliki/CanaryRelease.html)
--   [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
+- [Cloud Foundry Routes](https://docs.cloudfoundry.org/devguide/deploy-apps/routes-domains.html)
+- [CanaryRelease](https://martinfowler.com/bliki/CanaryRelease.html)
+- [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
 
-## App Execution & Security Groups: Setting up App Monitoring with New Relic
+## App Execution & Security Groups - Setting up App Monitoring with New Relic
 
 ### Supplemental topics
 
--   Egress traffic
--   Telemetry
--   PCF Metrics vs APM tool
+- Egress traffic
+- Telemetry
+- PCF Metrics vs APM tool
 
 ### Challenge questions
 
--   What are the default ASG's?
+- What are the default ASG's?
 
 ### Lab extras
 
--   Try `cf` commands relevant to security groups
--   Try PCF Metrics from the App Manager
+- Try `cf` commands relevant to security groups
+- Try PCF Metrics from the App Manager
 
-## Staging and Running: Push the Web-UI
+## Staging and Running - Push the Web-UI
 
 ### Challenge questions
 
@@ -296,46 +324,54 @@ with the following items.
 -   When you delete an application using `cf delete <app-name>`, is
     the associated route gets deleted as well?
 
-### How to debug when things don't work in this lab
+### How to debug when things do not work in this lab
 
 -   See if the `web-ui` app has `url` (`cf env web-ui`) environment var
-    -   The `rest-backend` upsi has to be created correctly
-    -   The `web-ui` is then bound to the `rest-backend` upsi
+    - The `rest-backend` upsi has to be created correctly
+    - The `web-ui` is then bound to the `rest-backend` upsi
 -   Make sure `web-ui` app was started with correct path to the Ruby code
-    -   Oherwise, you will experience `GemFile locked..` error
+    - Oherwise, you will experience `GemFile locked..` error
 -   See if `web-ui` has been restarted
 
 ### Lab extras
 
 -   Try `cf buildpacks`
+
 -   Try `cf stacks`
+
 -   What is the difference between `offline buildpack`
     vs `online buildpack`
+
 -   Use the online Java buildpack from the following website
     (Google `Java buildpack`)
 
-    ```
+    ```bash
     https://github.com/cloudfoundry/java-buildpack
     ```
 
 -   Redeploy the application using JDK version
 
+-   Rename the `rest-backend` service to something else,
+    and watch how `web-ui` breaks.
+    This will give you a better picture for how service bindings are
+    consumed in the bound application through `VCAP_SERVICES`.
 
-## Microservices: Container SSH
+## Microservices - Container SSH
 
 ### Error in the lab document
 
--   Any reference to `static-web-ui` should have been `web-ui-static`
+- Any reference to `static-web-ui` is for `web-ui-static`
 
 ### Supplemental topics
 
--   [Application continuum slides](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html)
--   [Application continuum website](http://www.appcontinuum.io/)
+- [Application continuum slides](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html)
+- [Application continuum website](http://www.appcontinuum.io/)
+- [Independent deployability](https://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html)
 
 ### Challenge questions (related to presentation)
 
--   What are the complexities introduced in Microservices?
--   Can "cloud native app" be monolith app?
+- What are the complexities introduced in Microservices?
+- Can "cloud native app" be monolith app?
 
 ### Challenge questions (related to lab)
 
@@ -351,17 +387,24 @@ with the following items.
 -   Do `cf ssh <app>` and display the values of these environment
     variables using `echo $<environment-variable-name>`
 -   Also try `ps -ef` command
+-   Hide the roster application from a public route,
+    but keep it visible to the web-ui application.
+    Hint:
+    Use an internal route.
 
 ### References
 
--   [Monthlith First](https://martinfowler.com/bliki/MonolithFirst.html)
--   [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
--   [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems-ebook/dp/B00T3N7XB4/ref=sr_1_1?ie=UTF8&qid=1539207745&sr=8-1&keywords=microservices+sam+newman) book
--   [Cloud Native Application by Josh Long](https://www.oreilly.com/library/view/cloud-native-java/9781449374631/) book
--   [Release it by Michael T. Nygard](https://pragprog.com/book/mnee/release-it) book
--   [Domain Driven Design by Eric Evans](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=sr_1_1?ie=UTF8&qid=1539295231&sr=8-1&keywords=domain+driven+design+eric+evans) book
+- [Strangle Monolith](https://www.martinfowler.com/bliki/StranglerApplication.html)
+- [Monolith first](https://www.martinfowler.com/bliki/MonolithFirst.html)
+- [Microservices for greenfield](https://samnewman.io/blog/2015/04/07/microservices-for-greenfield/)
+- [Do not start with a monolith](https://martinfowler.com/articles/dont-start-monolith.html)
+- [Deploying Microservice Architectures with Cloud Foundry](https://www.youtube.com/watch?v=DBIm6gDpSNg&t=520s) video
+- [Building Microservices by Sam Newman](https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems-ebook/dp/B00T3N7XB4/ref=sr_1_1?ie=UTF8&qid=1539207745&sr=8-1&keywords=microservices+sam+newman) book
+- [Cloud Native Application by Josh Long](https://www.oreilly.com/library/view/cloud-native-java/9781449374631/) book
+- [Release it by Michael T. Nygard](https://pragprog.com/book/mnee/release-it) book
+- [Domain Driven Design by Eric Evans](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/ref=sr_1_1?ie=UTF8&qid=1539295231&sr=8-1&keywords=domain+driven+design+eric+evans) book
 
-## Route Services: Deploying a route service for rate limiting
+## Route Services - Deploying a route service for rate limiting
 
 ### Error in the document
 
@@ -390,8 +433,9 @@ with the following items.
 ### Supplemental topics
 
 Use cases:
--   Denial of service attack
--   Multi-tenant rate quotas
+
+- Denial of service attack
+- Multi-tenant rate quotas
 
 ### Error in the lab document
 
@@ -409,74 +453,71 @@ Use cases:
 
 ### References
 
--   [Route Services](https://docs.cloudfoundry.org/services/route-services.html)
+- [Route Services](https://docs.cloudfoundry.org/services/route-services.html)
 
-## Docker: Pushing a Docker App
+## Docker - Pushing a Docker App
 
 ### Supplemental topics
 
--   PKS vs PAS (PCF) for running Docker apps
--   Health check - default behavior in PCF is checking a port 8080
+- PKS vs PAS (PCF) for running Docker apps
+- Health check - default behavior in PCF is checking a port 8080
 
 ### Error in the lab document
 
--   Rename `manifest.yml` to `manifest-old.yml' so that it does not
+-   Rename `manifest.yml` to `manifest-old.yml` so that it does not
     get picked up
 
 -   You want to run the `engineerbetter/worker-image` docker app
     with `--health-check-type process`.
 
-    ```
+    ```bash
     cf push my-docker-sang-shin -o engineerbetter/worker-image --health-check-type process
     ```
 
     Otherwise, you will experience the following behavior. (This might
     result in `Waiting the app to
 
-    ```
+    ```bash
     ...
     [HEALTH/0] ERR Failed to make TCP connection to port 8080: connection refused
     [CELL/0] ERR ... health check never passed.
     ```
 
-
 ### Lab Extras
 
 -   Try `cf feature-flags` and note that `diego_docker` is enabled
--   Try hello docker image: `tutum/hello-world` (if `diego_docker`
+-   Try hello docker image `tutum/hello-world` (if `diego_docker`
     is enabled)
 
-## Docker: Service Keys
+## Docker - Service Keys
 
 ### Challenge questions
 
--   Can you create service key from user provided service instance?
+- Can you create service key from user provided service instance?
 
 ## TCP Routing
 
 ### Lab extras
 
--   Try [tcp routing lab]
-(http://dojoblog.dellemc.com/tcp-routing/tcp-routing-and-ssl/)
+-   Try [tcp routing lab](http://dojoblog.dellemc.com/tcp-routing/tcp-routing-and-ssl/)
 -   Try `cf -v org sashin-org` to find out `total_reserved_route_ports`
-    in your PCF installation.  (In PWS, it is set to 0, hence you
-    will not be able to finish the lab above.)
+    in your PCF installation.
+    (In PWS, it is set to 0, hence you will not be able to finish the
+    lab above.)
 
-
-
-## UAA: Deploying UAA as a CF app
+## UAA - Deploying UAA as a CF app
 
 ### Error in the lab document
 
--   Increase the memory to 768M in the `uaa-manifest.yml` file as shown below.
+-   Increase the memory to 768M in the `uaa-manifest.yml` file as shown
+    below.
     (Currently it is set to `256M`.) Otherwise, the `cf push` will fail.
 
-    ```
+    ```yaml
     memory: 768M
     ```
 
-
-## UAA: Deploying a Route service for authentication
+## UAA - Deploying a Route service for authentication
 
 ### Explanation of the OAuth2 in the context of this Lab
 
@@ -486,16 +527,16 @@ Proxy (client) wants to access `/secure` (resource) of
 `web-ui` (resource server)
 on behalf of a user (resource owner) using OAuth2.
 
--   You, as a user, play the role of resource owner
--   Proxy plays the role of `client`
--   The `web-ui` plays the role of resource sever
--   The `UAA` plays the role of `OAuth2` server
+- You, as a user, play the role of resource owner
+- Proxy plays the role of `client`
+- The `web-ui` plays the role of resource sever
+- The `UAA` plays the role of `OAuth2` server
 
 #### Service to Service communication
 
--   Before anything happens, any service (or microservice) that needs to directly
-    communicate with UAA has to register with UAA and gets assigned
-    with `client id` (sometimes called `client name`) and
+-   Before anything happens, any service (or microservice) that needs to
+    directly communicate with UAA has to register with UAA and gets
+    assigned with `client id` (sometimes called `client name`) and
     `client secret`.
     -   You can think of Proxy, `web-ui`, and UAA as
         services (or microservices) running in PCF
@@ -505,16 +546,16 @@ on behalf of a user (resource owner) using OAuth2.
         the calling service knows about the `client secret`
 -   The Proxy has been registered with the UAA and assigned
     with `client id` and `client secret` and configured with
-    -   GUARD_CLIENT_KEY: dashboard
-    -   GUARD_CLIENT_SECRET: dashboardsecret
+    - GUARD_CLIENT_KEY: dashboard
+    - GUARD_CLIENT_SECRET: dashboardsecret
 -   The `web-ui` has to be registered with the UAA and assigned
     with its own  `client id` and `client secret`
     -   We need to configure `web-ui` with the `client id`
         and `client secret`
     -   This is the reason why we are creating `uaa-token` user
         provided service and binding `web-ui` to it
-        -   client_name - oauth_showcase_authorization_code
-        -   client_secret - secret
+        - client_name - oauth_showcase_authorization_code
+        - client_secret - secret
     -   We also need configure  `web-ui` with the URL of the UAA
 
 #### Authorization code flow
@@ -558,8 +599,8 @@ on behalf of a user (resource owner) using OAuth2.
 
 1.  Deploy UAA server
 2.  Bind `web-ui to UAA
-    -   Create `uaa-tokens` user provided service instance(UPSI) capturing UAA route `client id` and `client secret` of the `web-ui`
-    -   Bind `web-ui` to the `uaa-tokens` upsi using `cf bind-service` command
+    - Create `uaa-tokens` user provided service instance(UPSI) capturing UAA route `client id` and `client secret` of the `web-ui`
+    - Bind `web-ui` to the `uaa-tokens` upsi using `cf bind-service` command
 3.  Create Route Service proxy
     - Start `uaa-guard-proxy` routing service app
     - Create `authz` UPSI route service
@@ -577,29 +618,58 @@ on behalf of a user (resource owner) using OAuth2.
     `cf login -a api.run.pivotal.io` (this is an example of
     `password` grant flow)
 
-    ```
+    ```bash
     cd <Home-directory>/.cf
     cat config.json (or type config.json for Windows)
     ```
 
--   Observe that everytime a REST call is made to the `Cloud Controller',
+-   Observe that everytime a REST call is made to the `Cloud Controller`,
     access token is sent in the `Authorization` field as a bearer token
 
-    ```
+    ```bash
     cf -v app roster
     ```
 
 ### References
 
--   [OAuth2 Basics](https://www.slideshare.net/SangShin1/spring4-security-oauth2)
--   [Enabling Cloud Native Security](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa) slides 7-37
+- [OAuth2 Basics](https://www.slideshare.net/SangShin1/spring4-security-oauth2)
+- [Enabling Cloud Native Security](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa) slides 7-37
+
+## Cascading Failure - Preventing Cascading Failure
+
+### Challenge questions
+
+-   The lab demonstrate what happens when the roster app is "down".
+    What are the various way the roster,
+    a Java application,
+    can fail?
+
+-   What would happen to the web-ui application if the roster app slows
+    down?
+    Would the existing solution be exceptable to an end user?
+
+-   How might you protect the web-ui application against slow-down of
+    the roster application?
+    See
+    [Circuit Breaker pattern](https://microservices.io/patterns/reliability/circuit-breaker.html)
+    for more information.
+
+-   What happens if there are "transient failures" accessing the roster
+    application?
+    Maybe there is a short duration of time when scaling down the roster
+    application on Cloud Foundry.
+    Is the existing solution optimal for the end user?
+
+-   How might you improve the user experience during transient failures?
+    See [Retry Pattern](https://docs.microsoft.com/en-us/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling)
+    for more information.
 
 ## After the training
 
 ### Course website
 
--   The course website will be available to you even after the training
--   This "student notes" page will be also available even after the training
+- The course website will be available to you even after the training
+- This "student notes" page will be also available even after the training
 
 ### Cerfification
 
@@ -608,40 +678,80 @@ on behalf of a user (resource owner) using OAuth2.
 
 ### PCF access
 
--   The 5G memory given to you during the training will be
-    deleted right after the training
--   You can still do use PWS 2G free account to do the lab
-    on your own
--   Please note that Spring app needs 768M at a minimum, which
-    means you should be able to do most labs without a problem
-    except blue-green deployment
--   You can also use Java option to reduce the memory requirement
-    of your Spring app as following - with this setting, you
-    should be able to do even blue-green deployment
+-   For classes where the instructor sets up access to PCF,
+    you will have sufficient resources to run the labs.
 
-    ```
-    cf push spring-music -p ./build/libs/spring-music-1.0.jar --random-route -m 512M --no-start
-    cf set-env spring-music JAVA_OPTS -Xss228K
-    cf start spring-music
+-   For classes where you use a PWS free trial account,
+    you get 2G limited memory in your org.
+    You may encouter insufficient memory to run some of labs given
+    the 2G quota.
+
+-   For the current Java buildpack memory calculator, for Spring app
+    on Java 8+ need 768M container memory size at a minimum.
+
+-   You can "tune down" requirements of you Java applications to
+    reduce container memory footprints by one of two ways:
+    -   Set `JAVA_OPTS` explicitly for your application.
+    -   Set `JBP_CONFIG_OPEN_JDK_JRE` parameters for Java buildpack
+        memory calculator.
+
+-   You can use `JAVA_OPTS` method as follows:
+
+    ```bash
+    cf push roster -p ./rest-data-service.jar --random-route -m 512M --no-start
+    cf set-env roster JAVA_OPTS -Xss228K
+    cf start roster
     ```
 
     or set it in the manifest file
 
-    ```
+    ```yaml
     applications:
-    - name: spring-music
+    - name: roster
       disk_quota: 1G
       env:
         JAVA_OPTS: -Xss228K
       instances: 1
       memory: 512M
-      path: ./build/libs/spring-music-1.0.jar
-      routes:
-      - route: spring-music-unemigrant-nontransportation.cfapps.io
+      path: ./rest-data-service.jar
+      ...
     ```
+
+-   You can use `JBP_CONFIG_OPEN_JDK_JRE` method as follows:
+
+    ```bash
+    cf push roster -p ./rest-data-service.jar --random-route -m 512M --no-start
+    cf set-env roster JBP_CONFIG_OPEN_JDK_JRE '{ memory_calculator: { stack_threads: 100 } }'
+    cf restage roster
+    ```
+
+    or set it in the manifest file
+
+    ```yaml
+    applications:
+    - name: roster
+      disk_quota: 1G
+      env:
+        JBP_CONFIG_OPEN_JDK_JRE: '{ memory_calculator: { stack_threads: 100 } }'
+      instances: 1
+      memory: 512M
+      path: ./rest-data-service.jar
+      ...
+    ```
+
+-   Why do you need to restage when using `JBP_CONFIG_OPEN_JDK_JRE`
+    option?
+
+-   What is an advantage of using `JAVA_OPTS` over
+    `JBP_CONFIG_OPEN_JDK_JRE`?
+
+-   What is an advantage of using `JBP_CONFIG_OPEN_JDK_JRE` over
+    `JAVA_OPTS`?
+
+-   See the
+    [Java build pack documentation](https://github.com/cloudfoundry/java-buildpack/blob/master/README.md)
+    for more information.
 
 ### Contacting instructors
 
--   Feel free to contact the instructor for any issues/ideas/suggestions
-
-
+- Feel free to contact the instructor for any issues/ideas/suggestions
