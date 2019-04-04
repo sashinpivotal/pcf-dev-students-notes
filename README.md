@@ -48,9 +48,12 @@ with the following items.
 -   What is the `cf push` option that lets you specify the hostname
     part of a route?
     (`cf push -h`)
+-   What is the difference between PAS and PKS?
+-   What is commonality between PAS and PKS?
 
 ### References
 
+- [Containerization - P to V to C](https://www.youtube.com/watch?v=Z2oghhwoEO0)
 - [PCF Architectural diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/cloudfoundry-incubator/diego-design-notes/master/clickable-diego-overview/clickable-diego-overview.html)
 
 ## Core Themes - Scaling Apps
