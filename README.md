@@ -229,6 +229,7 @@ with the following items.
 
 - [12 factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
 - [Beyond 12 Factor (15 Factor)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app) or [Beyond 12 Factor (15 Factor)](https://www.oreilly.com/library/view/beyond-the-twelve-factor/9781492042631/)
+- [Cloud Native Maturity Model](https://blogs.sap.com/2017/03/28/developing-cloud-native-apps-on-sap-cloud-platform/)
 - [Spring External Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
 - [YAML tutorial site](https://gettaurus.org/docs/YAMLTutorial/)
 - [Cloud Foundry Environment Variables](https://docs.pivotal.io/pivotalcf/2-4/devguide/deploy-apps/environment-variable.html)
