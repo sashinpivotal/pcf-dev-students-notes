@@ -21,6 +21,24 @@ with the following items.
 
 ## Basic Definitions - Getting Started w/ the CF CLI
 
+### Lab Extras
+
+-   Install and use the "Targets" plugin from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
+
+    ```bash
+    cf install-plugin -r CF-Community "Targets"
+    ```
+
+    You can then use it as described below. More info [here](https://github.com/guidowb/cf-targets-plugin).
+
+    | command | usage | description|
+    | :--------------- |:---------------| :------------|
+    |`targets`| `cf targets` |list all saved targets|
+    |`save-target`|`cf save-target [-f] [<name>]`|save the current target for later use|
+    |`set-target`|`cf set-target [-f] <name>`|restore a previously saved target|
+    |`delete-target`|`cf delete-target <name>`|delete a previously saved target|
+
+
 ### Trouble-shooting
 
 -   If you are using GitBash under Windows, you might
@@ -35,6 +53,33 @@ with the following items.
 - Try [PCF AppManager](https://login.run.pivotal.io)
 
 ## Tech Overview - Pushing Apps
+
+### Trouble-shooting
+
+-   On Windows, the `curl` command with `POST` might result json
+    conversion error
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
+    ```
+    When it happens, you can capture the data part below into a file, i.e.
+    `person.json`
+
+    ```bash
+    {"firstName":"<some-key>","lastName":"<some-value>"}
+    ```
+
+    Then you can use `-d @<file-name>`
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d @person.json http://<YOUR-APP-URL>/people
+    ```
+
+    Alternatively escape the values in the command line (CMD)
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d "{\"firstName\":\"<some-key>\",\"lastName\":\"<some-value>\"}" http://<YOUR-APP-URL>/people
+    ```
 
 ### Challenge questions
 
@@ -85,6 +130,28 @@ with the following items.
 
 ## Logging Metrics - Application Logs and & Events
 
+### Lab Extras
+
+-   Visualizes logs and metrics via an app nozzle.
+
+    Install and use the "Firehose Plugin" from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
+
+    ```bash
+    cf install-plugin -r CF-Community "Firehose Plugin"
+    ```
+
+    Because you do not have enough rights to call 
+
+    ```bash
+    cf nozzle
+    ```
+    
+    and see all the metrics and logs, you may use an app-nozzle to see app related information with an interactive prompt.
+
+    ```bash
+    cf app-nozzle roster
+    ```
+
 ### Challenge questions
 
 -   Which component of PCF architecture is responsible for
@@ -94,6 +161,11 @@ with the following items.
 -   What is the responsibility of Doppler?
 -   What is the responsibility of a developer to
     take advantage of PCF logging system?
+
+
+### References
+
+- [Why Loggregator may lose logs](https://community.pivotal.io/s/article/Why-Loggregator-may-Lose-Logs)
 
 ## Resiliency - Application Resiliency
 
@@ -161,6 +233,7 @@ with the following items.
     will have to install `mysql` client first)
 -   Investigate Autoscaler plugin behavior - it is
     a backing service.
+
 
 ### Trouble-shooting
 
@@ -267,6 +340,11 @@ with the following items.
 1. Remove R1 from V1 - now V2 handles 100% of R1
 1. Remove R2 from V2 - now V2 handles only R1
 1. Rename V2 to V1
+
+### Lab extras
+
+- Define a route mapping with a context path `/xyz`.
+- Why does that not work e.g. returning a 404 page? How could you fix it? What are the advantages when you deploy multiple apps and make them available via context path? Hint: [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 ### Challenge questions
 
