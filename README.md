@@ -85,6 +85,28 @@ with the following items.
 
 ## Logging Metrics - Application Logs and & Events
 
+### Lab Extras
+
+-   Visualizes logs and metrics via an app nozzle.
+
+    Install and use the "Firehose Plugin" from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
+
+    ```bash
+    cf install-plugin -r CF-Community "Firehose Plugin"
+    ```
+
+    Because you do not have enough rights to call 
+
+    ```bash
+    cf nozzle
+    ```
+    
+    and see all the metrics and logs, you may use an app-nozzle to see app related information with an interactive prompt.
+
+    ```bash
+    cf app-nozzle roster
+    ```
+
 ### Challenge questions
 
 -   Which component of PCF architecture is responsible for
