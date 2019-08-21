@@ -447,6 +447,7 @@ with the following items.
 - [Application continuum slides](http://deck.appcontinuum.io/assets/player/KeynoteDHTMLPlayer.html)
 - [Application continuum website](http://www.appcontinuum.io/)
 - [Independent deployability](https://blog.cleancoder.com/uncle-bob/2014/09/19/MicroServicesAndJars.html)
+- [Self Contained Systems Architecture](https://scs-architecture.org/)
 
 ### Challenge questions (related to presentation)
 
