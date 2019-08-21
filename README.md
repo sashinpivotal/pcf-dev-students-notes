@@ -54,6 +54,33 @@ with the following items.
 
 ## Tech Overview - Pushing Apps
 
+### Trouble-shooting
+
+-   On Windows, the `curl` command with `POST` might result json
+    conversion error
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
+    ```
+    When it happens, you can capture the data part below into a file, i.e.
+    `person.json`
+
+    ```bash
+    {"firstName":"<some-key>","lastName":"<some-value>"}
+    ```
+
+    Then you can use `-d @<file-name>`
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d @person.json http://<YOUR-APP-URL>/people
+    ```
+
+    Alternatively escape the values in the command line (CMD)
+
+    ```bash
+    curl -H "Content-Type: application/json" -X POST -d "{\"firstName\":\"<some-key>\",\"lastName\":\"<some-value>\"}" http://<YOUR-APP-URL>/people
+    ```
+
 ### Challenge questions
 
 -   What is the PCF component that handles the requests coming
@@ -201,28 +228,6 @@ with the following items.
     will have to install `mysql` client first)
 -   Investigate Autoscaler plugin behavior - it is
     a backing service.
-
-### Trouble-shooting
-
--   On Windows, the `curl` command with `POST` might result json
-    conversion error
-
-    ```bash
-    curl -H "Content-Type: application/json" -X POST -d '{"firstName":"<some-key>","lastName":"<some-value>"}' http://<YOUR-APP-URL>/people
-    ```
-
-    When it happens, you can capture the data part below into a file, i.e.
-    `person.json`
-
-    ```bash
-    {"firstName":"<some-key>","lastName":"<some-value>"}
-    ```
-
-    Then you can use `-d @<file-name>`
-
-    ```bash
-    curl -H "Content-Type: application/json" -X POST -d @person.json http://<YOUR-APP-URL>/people
-    ```
 
 ### References
 
