@@ -162,6 +162,11 @@ with the following items.
 -   What is the responsibility of a developer in order to
     take advantage of PCF logging system?
 
+
+### References
+
+- [Why Loggregator may lose logs](https://community.pivotal.io/s/article/Why-Loggregator-may-Lose-Logs)
+
 ## Resiliency - Application Resiliency
 
 ### Trouble-shooting
