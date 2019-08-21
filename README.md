@@ -21,6 +21,24 @@ with the following items.
 
 ## Basic Definitions - Getting Started w/ the CF CLI
 
+### Lab Extras
+
+-   Install and use the "Targets" plugin from [Cloud Foundry community](https://plugins.cloudfoundry.org/) using the following command
+
+    ```bash
+    cf install-plugin -r CF-Community "Targets"
+    ```
+
+    You can then use it as described below. More info [here](https://github.com/guidowb/cf-targets-plugin).
+
+    | command | usage | description|
+    | :--------------- |:---------------| :------------|
+    |`targets`| `cf targets` |list all saved targets|
+    |`save-target`|`cf save-target [-f] [<name>]`|save the current target for later use|
+    |`set-target`|`cf set-target [-f] <name>`|restore a previously saved target|
+    |`delete-target`|`cf delete-target <name>`|delete a previously saved target|
+
+
 ### Trouble-shooting
 
 -   If you are using GitBash under Windows, you might
