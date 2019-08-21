@@ -313,6 +313,11 @@ with the following items.
 1. Remove R2 from V2 - now V2 handles only R1
 1. Rename V2 to V1
 
+### Lab extras
+
+- Define a route mapping with a context path `/xyz`.
+- Why does that not work e.g. returning a 404 page? How could you fix it? What are the advantages when you deploy multiple apps and make them available via context path? Hint: [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+
 ### Challenge questions
 
 -   How is a route constructed?
