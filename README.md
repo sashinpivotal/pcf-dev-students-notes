@@ -756,6 +756,12 @@ on behalf of a user (resource owner) using OAuth2.
 -   You can take the certification exam as described in the
     [Cloud Foundry website](https://www.cloudfoundry.org/certification/)
 
+### Debugging your real life applications
+
+-   Remote Debugging via `cf ssh -N -T -L 8000:localhost:8000 <APP_NAME>` into the container. See [How to remotely debug Java applications on Cloud Foundry](https://community.pivotal.io/s/article/How-to-Remotely-Debug-Java-Applications-on-Cloud-Foundry)
+
+-   Deploy your app to your local [PCF Dev](https://pivotal.io/pcf-dev) instance.
+
 ### PCF access
 
 -   For classes where the instructor sets up access to PCF,
