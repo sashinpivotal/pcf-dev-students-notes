@@ -597,6 +597,11 @@ Use cases:
     ```yaml
     memory: 768M
     ```
+-   Change the build pack to a version twice so that the memory calculator does not fail. Otherwise, the `cf push` will fail.
+
+    ```yaml
+    buildpack: https://github.com/cloudfoundry/java-buildpacks.git#v4.20
+    ```
 
 ## UAA - Deploying a Route service for authentication
 
