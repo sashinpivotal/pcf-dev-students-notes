@@ -396,6 +396,10 @@ with the following items.
 
 ## Staging and Running - Push the Web-UI
 
+### Error in the document
+
+-   Update the referenced `manifest.yml` with the provided `buildpack: https://github.com/cloudfoundry/ruby-buildpack.git#v1.6.35` to `buildpack: https://github.com/cloudfoundry/ruby-buildpack.git#v1.7.42` since the old buildpack does not support the current used `stack: cflinuxfs3`.
+    
 ### Challenge questions
 
 -   What could be use cases where you will have to do “cf restage”
